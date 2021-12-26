@@ -1,0 +1,15 @@
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\DataBaseSQL.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\DataBaseSQL.pdb
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\obj\Debug\DataBaseSQL.csproj.AssemblyReference.cache
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\obj\Debug\DataBaseSQL.csproj.CoreCompileInputs.cache
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\obj\Debug\DataBaseSQL.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\obj\Debug\DataBaseSQL.pdb
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.AccessControl.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.Permissions.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.Principal.Windows.dll
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.AccessControl.xml
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.Permissions.xml
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\bin\Debug\System.Security.Principal.Windows.xml
+C:\Projetos\Estudos\C#\TresCamadas\DataBaseSQL\obj\Debug\DataBaseSQL.csproj.CopyComplete
