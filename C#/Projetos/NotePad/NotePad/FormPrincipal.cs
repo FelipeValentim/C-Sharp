@@ -63,7 +63,6 @@ namespace NotePad
             //string fontSize = (toolStripComboBoxFonteTamanho.Text);
             //textBox.Select
             //textBox.Font = new Font(textBox.Font.FontFamily, fontSize);
-            //richTextBox.SelectionFont = 
             richTextBox.SelectionFont = new Font(richTextBox.Font.FontFamily, fontSize);
         }
 
