@@ -104,7 +104,7 @@ namespace NotePad
                     {
                         tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, fontSize, tmpRTB.SelectionFont.Style);
                     }
-                    else if (String.Equals(choice, "fontStyle")) // No caso de clicar na opção de negrito/itálico/underline
+                    else if (String.Equals(choice, "fontStyle")) // No caso de clicar na opção de negrito/itálico/sublinhado.
                     {
                         tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
                     }
