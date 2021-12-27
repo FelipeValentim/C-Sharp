@@ -78,16 +78,16 @@ namespace NotePad
         private void toolStripComboBoxFonteTamanho_SelectedIndexChanged(object sender, EventArgs e)
         {
             float fontSize = float.Parse(toolStripComboBoxFonteTamanho.Text);
-            FormataTexto(string.Empty, fontSize, false);
+            FormataTexto(string.Empty, fontSize, FontStyle.Regular, "fontSize");
         }
 
         private void toolStripComboBoxFonteTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string fontStyle = toolStripComboBoxFonteTipo.Text;
-            FormataTexto(fontStyle, 0, true);
+            FormataTexto(fontStyle, 0, FontStyle.Regular, "fontName");
         }
 
-        private void FormataTexto(string fontName, float fontSize, bool fonte)
+        private void FormataTexto(string fontName, float fontSize, FontStyle style, string choice)
         {
             using (RichTextBox tmpRTB = new RichTextBox())
             {
@@ -96,15 +96,19 @@ namespace NotePad
                 for (int i = 0; i < tmpRTB.TextLength; ++i)
                 {
                     tmpRTB.Select(i, 1);
-                    if (fonte)
+                    if (String.Equals(choice, "fontName")) // No caso de trocar o nome da fonte
                     {
-                        tmpRTB.SelectionFont = new Font(fontName, tmpRTB.SelectionFont.Size);
+                        tmpRTB.SelectionFont = new Font(fontName, tmpRTB.SelectionFont.Size, tmpRTB.SelectionFont.Style);
                     }
-                    else
+                    else if(String.Equals(choice, "fontSize")) // No caso de trocar o tamanho da fonte
                     {
-                        tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, fontSize);
+                        tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, fontSize, tmpRTB.SelectionFont.Style);
                     }
-                    
+                    else if (String.Equals(choice, "fontStyle")) // No caso de clicar na opção de negrito/itálico/underline
+                    {
+                        tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
+                    }
+
                 }
                 tmpRTB.SelectAll();
                 richTextBox.SelectedRtf = tmpRTB.SelectedRtf;
@@ -142,6 +146,21 @@ namespace NotePad
                 e.Cancel = true;
             }
             
+        }
+
+        private void toolStripButtonNegrito_Click(object sender, EventArgs e)
+        {
+            FormataTexto(" ", 0, FontStyle.Bold, "fontStyle");
+        }
+
+        private void toolStripButtonUnderline_Click(object sender, EventArgs e)
+        {
+            FormataTexto(" ", 0, FontStyle.Underline, "fontStyle");
+        }
+
+        private void toolStripButtonItalic_Click(object sender, EventArgs e)
+        {
+            FormataTexto(" ", 0, FontStyle.Italic, "fontStyle");
         }
     }
 }
