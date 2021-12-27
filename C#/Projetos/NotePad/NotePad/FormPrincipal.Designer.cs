@@ -265,7 +265,6 @@ namespace NotePad
             this.richTextBox.Size = new System.Drawing.Size(974, 512);
             this.richTextBox.TabIndex = 2;
             this.richTextBox.Text = "";
-            this.richTextBox.SelectionChanged += new System.EventHandler(this.richTextBox_SelectionChanged);
             // 
             // FormPrincipal
             // 
@@ -278,7 +277,8 @@ namespace NotePad
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
-            this.Text = "NotePad";
+            this.Text = "NotePad - Sem título";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
