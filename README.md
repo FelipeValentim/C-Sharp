@@ -1,4 +1,4 @@
-# Projetos C-Sharp :desktop_computer:
+# C-Sharp :desktop_computer:
 
 - Visual Studio Community
 - Windows Form Application
