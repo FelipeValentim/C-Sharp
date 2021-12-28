@@ -44,17 +44,17 @@ namespace NotePad
             this.toolStripButtonUnderline = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonItalic = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEsquerda = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCentro = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDireita = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonResetar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,11 +76,11 @@ namespace NotePad
             this.toolStripButtonUnderline,
             this.toolStripButtonItalic,
             this.toolStripSeparator5,
-            this.toolStripButton6,
+            this.toolStripButtonEsquerda,
             this.toolStripSeparator7,
-            this.toolStripButton7,
+            this.toolStripButtonCentro,
             this.toolStripSeparator8,
-            this.toolStripButton8,
+            this.toolStripButtonDireita,
             this.toolStripSeparator6,
             this.toolStripButtonResetar,
             this.toolStripSeparator9,
@@ -193,7 +193,9 @@ namespace NotePad
             this.toolStripComboBoxFonteTamanho.Name = "toolStripComboBoxFonteTamanho";
             this.toolStripComboBoxFonteTamanho.Size = new System.Drawing.Size(75, 27);
             this.toolStripComboBoxFonteTamanho.Text = "10";
+            this.toolStripComboBoxFonteTamanho.ToolTipText = "Tamanho da fonte";
             this.toolStripComboBoxFonteTamanho.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFonteTamanho_SelectedIndexChanged);
+            this.toolStripComboBoxFonteTamanho.TextUpdate += new System.EventHandler(this.toolStripComboBoxFonteTamanho_TextUpdate);
             // 
             // toolStripSeparator4
             // 
@@ -235,45 +237,45 @@ namespace NotePad
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton6
+            // toolStripButtonEsquerda
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton6.Text = "Alinhar para esquerda";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.toolStripButtonEsquerda.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEsquerda.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEsquerda.Image")));
+            this.toolStripButtonEsquerda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEsquerda.Name = "toolStripButtonEsquerda";
+            this.toolStripButtonEsquerda.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonEsquerda.Text = "Alinhar para esquerda";
+            this.toolStripButtonEsquerda.Click += new System.EventHandler(this.toolStripButtonEsquerda_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton7
+            // toolStripButtonCentro
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton7.Text = "Centralizar";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.toolStripButtonCentro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCentro.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCentro.Image")));
+            this.toolStripButtonCentro.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCentro.Name = "toolStripButtonCentro";
+            this.toolStripButtonCentro.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonCentro.Text = "Centralizar";
+            this.toolStripButtonCentro.Click += new System.EventHandler(this.toolStripButtonCentro_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton8
+            // toolStripButtonDireita
             // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton8.Text = "Alinhar para direita";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            this.toolStripButtonDireita.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDireita.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDireita.Image")));
+            this.toolStripButtonDireita.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDireita.Name = "toolStripButtonDireita";
+            this.toolStripButtonDireita.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonDireita.Text = "Alinhar para direita";
+            this.toolStripButtonDireita.Click += new System.EventHandler(this.toolStripButtonDireita_Click);
             // 
             // toolStripSeparator6
             // 
@@ -290,6 +292,20 @@ namespace NotePad
             this.toolStripButtonResetar.Text = "Resetar formatação";
             this.toolStripButtonResetar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(1, 538);
@@ -303,25 +319,12 @@ namespace NotePad
             this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.richTextBox.Location = new System.Drawing.Point(1, 28);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.Size = new System.Drawing.Size(972, 510);
             this.richTextBox.TabIndex = 2;
             this.richTextBox.Text = "";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
             // 
             // FormPrincipal
             // 
@@ -362,9 +365,9 @@ namespace NotePad
         private System.Windows.Forms.ToolStripButton toolStripButtonUnderline;
         private System.Windows.Forms.ToolStripButton toolStripButtonItalic;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEsquerda;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCentro;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDireita;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;

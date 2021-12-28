@@ -54,7 +54,9 @@ namespace NotePad
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             openFileDialog.Title = "Abrir arquivo de texto";
-            openFileDialog.Filter = "Arquivos de texto (*.txt)|*.txt|Todos os arquivos (*.*)|*.*";
+            //openFileDialog.Filter = "Arquivos de texto (*.txt)|*.txt|Todos os arquivos (*.*)|*.*";
+            openFileDialog.Filter = "Arquivos de texto (*.txt)|*.txt|Arquivo RTF (*.rtf*)|*.rtf*";
+
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 filePath = openFileDialog.FileName;
@@ -64,8 +66,14 @@ namespace NotePad
             if (filePath != string.Empty)
             {
                 richTextBox.Clear();
-                //richTextBox.Text = File.ReadAllText(filePath);
-                richTextBox.LoadFile(filePath);
+                if (string.Equals(Path.GetExtension(filePath), ".txt"))
+                {
+                    richTextBox.Text = File.ReadAllText(filePath);
+                }
+                else
+                {
+                    richTextBox.LoadFile(filePath);
+                }
             }
         }
 
@@ -91,7 +99,6 @@ namespace NotePad
 
         private void FormataTexto(string fontName, float fontSize, FontStyle style, string choice)
         {
-            //FormatText formataTexto = new FormatText();
             richTextBox = FormatText.FormataTexto(fontName, fontSize, style, choice, richTextBox);
         }
 
@@ -113,10 +120,17 @@ namespace NotePad
             saveFileDialog.ShowDialog(this);
 
             // If the file name is not an empty string open it for saving.
-            if (saveFileDialog.FileName != "")
+            if (saveFileDialog.FileName != string.Empty)
             {
-                //File.WriteAllText(saveFileDialog.FileName, richTextBox.Text);
-                richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText);
+                if (string.Equals(Path.GetExtension(saveFileDialog.FileName), ".rtf"))
+                {
+                    richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText);
+                }
+                else
+                {
+                    richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
+                }
+                    //File.WriteAllText(saveFileDialog.FileName, richTextBox.Text);
                 //richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
             }
         }
@@ -132,30 +146,30 @@ namespace NotePad
 
         private void toolStripButtonNegrito_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Bold, "fontStyleBold");    
+            FormataTexto(" ", 0, FontStyle.Bold, "fontStyle");    
         }
 
         private void toolStripButtonUnderline_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Underline, "fontStyleUnderline");
+            FormataTexto(" ", 0, FontStyle.Underline, "fontStyle");
         }
 
         private void toolStripButtonItalic_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Italic, "fontStyleItalic");
+            FormataTexto(" ", 0, FontStyle.Italic, "fontStyle");
         }
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void toolStripButtonEsquerda_Click(object sender, EventArgs e)
         {
             richTextBox.SelectionAlignment = HorizontalAlignment.Left;
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e)
+        private void toolStripButtonCentro_Click(object sender, EventArgs e)
         {
             richTextBox.SelectionAlignment = HorizontalAlignment.Center;
         }
 
-        private void toolStripButton8_Click(object sender, EventArgs e)
+        private void toolStripButtonDireita_Click(object sender, EventArgs e)
         {
             richTextBox.SelectionAlignment = HorizontalAlignment.Right;
         }
@@ -163,7 +177,12 @@ namespace NotePad
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             FormataTexto("Arial", 10, FontStyle.Regular, "reset");
-            richTextBox.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void toolStripComboBoxFonteTamanho_TextUpdate(object sender, EventArgs e)
+        {
+            float fontSize = float.Parse(toolStripComboBoxFonteTipo.Text);
+            FormataTexto(string.Empty, fontSize, FontStyle.Regular, "fontSize");
         }
     }
 }

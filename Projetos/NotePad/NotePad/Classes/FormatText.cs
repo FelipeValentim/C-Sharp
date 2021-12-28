@@ -30,35 +30,13 @@ namespace NotePad.Classes
                     else if (String.Equals(choice, "fontSize")) // No caso de trocar o tamanho da fonte
                     {
                         tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, fontSize, tmpRTB.SelectionFont.Style);
-                    }
-                    else if (String.Equals(choice, "fontStyleBold")) // No caso de clicar na opção de negrito
+                    }else if (String.Equals(choice, "fontStyle")) // No caso de clicar na opção de Itálico
                     {
-
-                        if (tmpRTB.SelectionFont.Bold)
-                        {
-                            RemoveFontStyle(FontStyle.Bold, tmpRTB);
-                        } 
-                        else
-                        {
-                            tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
+                        if (tmpRTB.SelectionFont.Style.ToString().Contains(style.ToString())) // Checa se o estilo (bold, italic, underline), existe no caractere selecionado
+                        { 
+                            RemoveFontStyle(style, tmpRTB); // Se existe, irá remover especificamente esse estilo dado no event do buttom
                         }
-                    } else if (String.Equals(choice, "fontStyleUnderline")) // No caso de clicar na opção de sublinhado
-                    {
-                        if (tmpRTB.SelectionFont.Underline)
-                        {
-                            RemoveFontStyle(FontStyle.Underline, tmpRTB);
-                        }
-                        else
-                        {
-                            tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
-                        }
-                    } else if (String.Equals(choice, "fontStyleItalic")) // No caso de clicar na opção de Itálico
-                    {
-                        if (tmpRTB.SelectionFont.Italic)
-                        {
-                            RemoveFontStyle(FontStyle.Italic, tmpRTB);
-                        }
-                        else
+                        else // Caso contrário, irá adicionar o efeito mantendo os outros já existentens
                         {
                             tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
                         }
@@ -67,6 +45,8 @@ namespace NotePad.Classes
                     {
                         //tmpRTB.SelectionFont = new Font("Arial", 10);
                         tmpRTB.ClearAllFormatting(new Font("Arial", 12f));
+                        tmpRTB.SelectionAlignment = HorizontalAlignment.Left;
+
                     }
 
                 }
