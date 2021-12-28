@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotePad.Classes;
 
 namespace NotePad
 {
@@ -27,7 +28,7 @@ namespace NotePad
         {
             if (richTextBox.Text != string.Empty)
             {
-                var dialogResult = MessageBox.Show("Deseja salvar o arquivo " + PegarNomeArquivo() + "?", "NotePad", MessageBoxButtons.YesNoCancel);
+                var dialogResult = MessageBox.Show("Deseja salvar o arquivo " + PegarNomeArquivo() + "?", "NotePad", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.No)
                 {
                     richTextBox.Clear();
@@ -63,7 +64,8 @@ namespace NotePad
             if (filePath != string.Empty)
             {
                 richTextBox.Clear();
-                richTextBox.Text = File.ReadAllText(filePath);
+                //richTextBox.Text = File.ReadAllText(filePath);
+                richTextBox.LoadFile(filePath);
             }
         }
 
@@ -89,30 +91,8 @@ namespace NotePad
 
         private void FormataTexto(string fontName, float fontSize, FontStyle style, string choice)
         {
-            using (RichTextBox tmpRTB = new RichTextBox())
-            {
-                tmpRTB.SelectAll();
-                tmpRTB.SelectedRtf = richTextBox.SelectedRtf;
-                for (int i = 0; i < tmpRTB.TextLength; ++i)
-                {
-                    tmpRTB.Select(i, 1);
-                    if (String.Equals(choice, "fontName")) // No caso de trocar o nome da fonte
-                    {
-                        tmpRTB.SelectionFont = new Font(fontName, tmpRTB.SelectionFont.Size, tmpRTB.SelectionFont.Style);
-                    }
-                    else if(String.Equals(choice, "fontSize")) // No caso de trocar o tamanho da fonte
-                    {
-                        tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, fontSize, tmpRTB.SelectionFont.Style);
-                    }
-                    else if (String.Equals(choice, "fontStyle")) // No caso de clicar na opção de negrito/itálico/sublinhado.
-                    {
-                        tmpRTB.SelectionFont = new Font(tmpRTB.SelectionFont.Name, tmpRTB.SelectionFont.Size, style | tmpRTB.SelectionFont.Style | tmpRTB.SelectionFont.Style);
-                    }
-
-                }
-                tmpRTB.SelectAll();
-                richTextBox.SelectedRtf = tmpRTB.SelectedRtf;
-            }
+            //FormatText formataTexto = new FormatText();
+            richTextBox = FormatText.FormataTexto(fontName, fontSize, style, choice, richTextBox);
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -135,7 +115,9 @@ namespace NotePad
             // If the file name is not an empty string open it for saving.
             if (saveFileDialog.FileName != "")
             {
-                File.WriteAllText(saveFileDialog.FileName, richTextBox.Text);
+                //File.WriteAllText(saveFileDialog.FileName, richTextBox.Text);
+                richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.RichText);
+                //richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
             }
         }
 
@@ -150,17 +132,38 @@ namespace NotePad
 
         private void toolStripButtonNegrito_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Bold, "fontStyle");
+            FormataTexto(" ", 0, FontStyle.Bold, "fontStyleBold");    
         }
 
         private void toolStripButtonUnderline_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Underline, "fontStyle");
+            FormataTexto(" ", 0, FontStyle.Underline, "fontStyleUnderline");
         }
 
         private void toolStripButtonItalic_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Italic, "fontStyle");
+            FormataTexto(" ", 0, FontStyle.Italic, "fontStyleItalic");
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            richTextBox.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            richTextBox.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            richTextBox.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FormataTexto("Arial", 10, FontStyle.Regular, "reset");
+            richTextBox.SelectionAlignment = HorizontalAlignment.Left;
         }
     }
 }

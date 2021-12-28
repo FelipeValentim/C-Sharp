@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClasseSingletonPrincipal.cs" />
+    <Compile Include="Classes\FormatText.cs" />
+    <Compile Include="Classes\FormatReset.cs" />
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
