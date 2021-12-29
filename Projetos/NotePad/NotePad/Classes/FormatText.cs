@@ -44,7 +44,7 @@ namespace NotePad.Classes
                     else if (String.Equals(choice, "reset")) // No caso de apertar na opção de Resetar
                     {
                         //tmpRTB.SelectionFont = new Font("Arial", 10);
-                        tmpRTB.ClearAllFormatting(new Font("Arial", 12f));
+                        tmpRTB.ClearAllFormatting(new Font(fontName, fontSize));
                         tmpRTB.SelectionAlignment = HorizontalAlignment.Left;
 
                     }

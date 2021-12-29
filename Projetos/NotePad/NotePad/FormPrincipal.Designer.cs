@@ -30,7 +30,7 @@ namespace NotePad
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonFileNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFileImport = new System.Windows.Forms.ToolStripButton();
@@ -52,17 +52,25 @@ namespace NotePad
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonResetar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCor = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripStatusLabelLinhasColunas = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripStatusLabelWords = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonFileNew,
             this.toolStripSeparator1,
             this.toolStripButtonFileImport,
@@ -84,12 +92,13 @@ namespace NotePad
             this.toolStripSeparator6,
             this.toolStripButtonResetar,
             this.toolStripSeparator9,
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(1, 1);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(972, 27);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripButtonCor,
+            this.toolStripSeparator12});
+            this.toolStrip.Location = new System.Drawing.Point(1, 1);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(972, 27);
+            this.toolStrip.TabIndex = 0;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // toolStripButtonFileNew
             // 
@@ -148,6 +157,7 @@ namespace NotePad
             this.toolStripComboBoxFonteTipo.Name = "toolStripComboBoxFonteTipo";
             this.toolStripComboBoxFonteTipo.Size = new System.Drawing.Size(121, 27);
             this.toolStripComboBoxFonteTipo.Text = "Arial";
+            this.toolStripComboBoxFonteTipo.ToolTipText = "Estilo da fonte";
             this.toolStripComboBoxFonteTipo.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFonteTipo_SelectedIndexChanged);
             // 
             // toolStripComboBoxFonteTamanho
@@ -192,10 +202,9 @@ namespace NotePad
             "72"});
             this.toolStripComboBoxFonteTamanho.Name = "toolStripComboBoxFonteTamanho";
             this.toolStripComboBoxFonteTamanho.Size = new System.Drawing.Size(75, 27);
-            this.toolStripComboBoxFonteTamanho.Text = "10";
+            this.toolStripComboBoxFonteTamanho.Text = "11";
             this.toolStripComboBoxFonteTamanho.ToolTipText = "Tamanho da fonte";
             this.toolStripComboBoxFonteTamanho.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFonteTamanho_SelectedIndexChanged);
-            this.toolStripComboBoxFonteTamanho.TextUpdate += new System.EventHandler(this.toolStripComboBoxFonteTamanho_TextUpdate);
             // 
             // toolStripSeparator4
             // 
@@ -297,34 +306,85 @@ namespace NotePad
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton1
+            // toolStripButtonCor
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButtonCor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCor.Image")));
+            this.toolStripButtonCor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCor.Name = "toolStripButtonCor";
+            this.toolStripButtonCor.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonCor.Text = "toolStripButton1";
+            this.toolStripButtonCor.ToolTipText = "Mudar a cor";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(1, 538);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator11,
+            this.toolStripStatusLabelLinhasColunas,
+            this.toolStripSeparator10,
+            this.toolStripStatusLabel1,
+            this.toolStripSeparator13,
+            this.toolStripStatusLabelWords});
+            this.statusStrip1.Location = new System.Drawing.Point(1, 537);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(972, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(972, 23);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripStatusLabelLinhasColunas
+            // 
+            this.toolStripStatusLabelLinhasColunas.Name = "toolStripStatusLabelLinhasColunas";
+            this.toolStripStatusLabelLinhasColunas.Size = new System.Drawing.Size(118, 18);
+            this.toolStripStatusLabelLinhasColunas.Text = "0 Linhas | 0 colunas   ";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(47, 18);
+            this.toolStripStatusLabel1.Text = "UTF-8   ";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripStatusLabelWords
+            // 
+            this.toolStripStatusLabelWords.Name = "toolStripStatusLabelWords";
+            this.toolStripStatusLabelWords.Size = new System.Drawing.Size(67, 18);
+            this.toolStripStatusLabelWords.Text = "Palavra(s)   ";
+            // 
             // richTextBox
             // 
+            this.richTextBox.AcceptsTab = true;
             this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox.EnableAutoDragDrop = true;
+            this.richTextBox.Font = new System.Drawing.Font("Arial", 11F);
             this.richTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.richTextBox.HideSelection = false;
             this.richTextBox.Location = new System.Drawing.Point(1, 28);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(972, 510);
+            this.richTextBox.Size = new System.Drawing.Size(972, 509);
             this.richTextBox.TabIndex = 2;
             this.richTextBox.Text = "";
+            this.richTextBox.Click += new System.EventHandler(this.richTextBox_Click);
+            this.richTextBox.TextChanged += new System.EventHandler(this.richTextBox_TextChanged);
             // 
             // FormPrincipal
             // 
@@ -334,15 +394,17 @@ namespace NotePad
             this.ClientSize = new System.Drawing.Size(974, 561);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Text = "NotePad - Sem título";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +412,7 @@ namespace NotePad
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonFileNew;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButtonFileImport;
@@ -374,7 +436,14 @@ namespace NotePad
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButtonResetar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCor;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLinhasColunas;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelWords;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
     }
 }
 

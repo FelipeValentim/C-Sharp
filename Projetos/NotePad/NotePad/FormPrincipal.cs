@@ -119,7 +119,7 @@ namespace NotePad
             saveFileDialog.Title = "Salvar arquivo de texto";
             saveFileDialog.ShowDialog(this);
 
-            // If the file name is not an empty string open it for saving.
+            // Se o arquivo não seja vazio
             if (saveFileDialog.FileName != string.Empty)
             {
                 if (string.Equals(Path.GetExtension(saveFileDialog.FileName), ".rtf"))
@@ -176,13 +176,72 @@ namespace NotePad
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            FormataTexto("Arial", 10, FontStyle.Regular, "reset");
+            FormataTexto("Arial", 11, FontStyle.Regular, "reset");
+            GetValuesText();
         }
 
         private void toolStripComboBoxFonteTamanho_TextUpdate(object sender, EventArgs e)
         {
             float fontSize = float.Parse(toolStripComboBoxFonteTipo.Text);
             FormataTexto(string.Empty, fontSize, FontStyle.Regular, "fontSize");
+        }
+
+        private void richTextBox_Click(object sender, EventArgs e)
+        {
+            //GetValuesText();
+            GetRowsColumns();
+        }
+
+        private void richTextBox_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox.Font = new Font("Arial", 11);
+            GetRowsColumns();
+            GetWords();
+        }
+
+        private void GetValuesText()
+        {
+            toolStripComboBoxFonteTamanho.Text = Convert.ToString(richTextBox.SelectionFont.Size);
+            toolStripComboBoxFonteTipo.Text = richTextBox.SelectionFont.Name;
+        }
+
+        private void GetRowsColumns()
+        {
+            // Contar colunas e linhas
+            int index = richTextBox.SelectionStart;
+            int li = richTextBox.GetLineFromCharIndex(index);
+            int firstChar = richTextBox.GetFirstCharIndexFromLine(li);
+            int col;
+            col = index - firstChar;
+
+            toolStripStatusLabelLinhasColunas.Text = li + " linhas | " + col + " colunas   ";
+        }
+
+        private void GetWords()
+        {
+            int wordCount = 0, index = 0;
+            while (index < richTextBox.Text.Length && char.IsWhiteSpace(richTextBox.Text[index]))
+            {
+                index++;
+            }
+
+            while (index < richTextBox.Text.Length)
+            {
+                // Checa se o char não é um espaço em branco
+                while (index < richTextBox.Text.Length && !char.IsWhiteSpace(richTextBox.Text[index]))
+                {
+                    index++;
+                }
+
+                wordCount++;
+
+                // Pula espaços em branco
+                while (index < richTextBox.Text.Length && char.IsWhiteSpace(richTextBox.Text[index]))
+                {
+                    index++;
+                }
+            }
+            toolStripStatusLabelWords.Text = ((wordCount == 0) ? "Palavra(s)" : wordCount + " palavra(s)  ");
         }
     }
 }
