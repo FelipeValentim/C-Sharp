@@ -21,7 +21,7 @@ namespace TresCamadas
         private void Form1_Load(object sender, EventArgs e)
         {
             /*var carro = new Carro();
-            //carro.CriarTabela();
+            carro.CriarTabela();
             carro.Nome = "Fiesta 2";
             carro.Marca = "Ford";
             carro.Quantidade = 2;
