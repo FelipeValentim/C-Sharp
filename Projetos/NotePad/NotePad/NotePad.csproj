@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ClasseSingletonPrincipal.cs" />
     <Compile Include="Classes\FormatText.cs" />
     <Compile Include="Classes\FormatReset.cs" />
     <Compile Include="Classes\PersonalizaCor.cs" />

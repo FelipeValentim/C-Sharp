@@ -16,7 +16,7 @@ namespace NotePad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(ClasseSingletonPrincipal.CriarInstanciaSingleton());
+            Application.Run(new FormPrincipal());
         }
     }
 }
