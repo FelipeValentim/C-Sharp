@@ -243,5 +243,18 @@ namespace NotePad
             }
             toolStripStatusLabelWords.Text = ((wordCount == 0) ? "Palavra(s)" : wordCount + " palavra(s)  ");
         }
+
+        private void toolStripSplitButtonCor_ButtonClick(object sender, EventArgs e)
+        {
+            //richTextBox.SelectionColor = Color.FromArgb(0,255,255);
+            //PersonalizaCor personalizaCor = new PersonalizaCor();
+
+            richTextBox.SelectionColor = Color.FromArgb(PersonalizaCor.Instance.GetColor[0], PersonalizaCor.Instance.GetColor[1], PersonalizaCor.Instance.GetColor[2]);
+        }
+
+        private void personalizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new PersonalizarCor().Show();
+        }
     }
 }

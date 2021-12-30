@@ -19,3 +19,4 @@ C:\Workspace\C#\Projetos\NotePad\NotePad\obj\Debug\NotePad.csproj.GenerateResour
 C:\Workspace\C#\Projetos\NotePad\NotePad\obj\Debug\NotePad.csproj.CoreCompileInputs.cache
 C:\Workspace\C#\Projetos\NotePad\NotePad\obj\Debug\NotePad.exe
 C:\Workspace\C#\Projetos\NotePad\NotePad\obj\Debug\NotePad.pdb
+C:\Workspace\C#\Projetos\NotePad\NotePad\obj\Debug\NotePad.PersonalizarCor.resources
