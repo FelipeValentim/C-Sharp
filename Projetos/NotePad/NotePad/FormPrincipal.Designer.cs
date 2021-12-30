@@ -50,10 +50,11 @@ namespace NotePad
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonDireita = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonResetar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSplitButtonCor = new System.Windows.Forms.ToolStripSplitButton();
+            this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonResetar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripStatusLabelLinhasColunas = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,7 +63,7 @@ namespace NotePad
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripStatusLabelWords = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonRemoveColor = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@ namespace NotePad
             this.toolStripButtonDireita,
             this.toolStripSeparator6,
             this.toolStripSplitButtonCor,
+            this.toolStripButtonRemoveColor,
             this.toolStripSeparator9,
             this.toolStripButtonResetar,
             this.toolStripSeparator12});
@@ -292,26 +294,6 @@ namespace NotePad
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButtonResetar
-            // 
-            this.toolStripButtonResetar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonResetar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonResetar.Image")));
-            this.toolStripButtonResetar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonResetar.Name = "toolStripButtonResetar";
-            this.toolStripButtonResetar.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonResetar.Text = "Resetar formatação";
-            this.toolStripButtonResetar.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
-            // 
             // toolStripSplitButtonCor
             // 
             this.toolStripSplitButtonCor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -323,6 +305,33 @@ namespace NotePad
             this.toolStripSplitButtonCor.Size = new System.Drawing.Size(36, 24);
             this.toolStripSplitButtonCor.Text = "Mudar cor";
             this.toolStripSplitButtonCor.ButtonClick += new System.EventHandler(this.toolStripSplitButtonCor_ButtonClick);
+            // 
+            // personalizarToolStripMenuItem
+            // 
+            this.personalizarToolStripMenuItem.Name = "personalizarToolStripMenuItem";
+            this.personalizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personalizarToolStripMenuItem.Text = "Personalizar";
+            this.personalizarToolStripMenuItem.Click += new System.EventHandler(this.personalizarToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonResetar
+            // 
+            this.toolStripButtonResetar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonResetar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonResetar.Image")));
+            this.toolStripButtonResetar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonResetar.Name = "toolStripButtonResetar";
+            this.toolStripButtonResetar.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonResetar.Text = "Resetar formatação";
+            this.toolStripButtonResetar.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
             // 
             // statusStrip1
             // 
@@ -389,12 +398,15 @@ namespace NotePad
             this.richTextBox.Click += new System.EventHandler(this.richTextBox_Click);
             this.richTextBox.TextChanged += new System.EventHandler(this.richTextBox_TextChanged);
             // 
-            // personalizarToolStripMenuItem
+            // toolStripButtonRemoveColor
             // 
-            this.personalizarToolStripMenuItem.Name = "personalizarToolStripMenuItem";
-            this.personalizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.personalizarToolStripMenuItem.Text = "Personalizar";
-            this.personalizarToolStripMenuItem.Click += new System.EventHandler(this.personalizarToolStripMenuItem_Click);
+            this.toolStripButtonRemoveColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRemoveColor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemoveColor.Image")));
+            this.toolStripButtonRemoveColor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRemoveColor.Name = "toolStripButtonRemoveColor";
+            this.toolStripButtonRemoveColor.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonRemoveColor.Text = "Remover cor";
+            this.toolStripButtonRemoveColor.Click += new System.EventHandler(this.toolStripButtonRemoveColor_Click);
             // 
             // FormPrincipal
             // 
@@ -455,6 +467,7 @@ namespace NotePad
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButtonCor;
         private System.Windows.Forms.ToolStripMenuItem personalizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRemoveColor;
     }
 }
 

@@ -144,6 +144,7 @@ namespace NotePad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSelecionar);
@@ -160,6 +161,7 @@ namespace NotePad
             this.MinimizeBox = false;
             this.Name = "PersonalizarCor";
             this.Text = "Personalizar cor";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.PersonalizarCor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

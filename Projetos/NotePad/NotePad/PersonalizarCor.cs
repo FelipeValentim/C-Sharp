@@ -16,7 +16,6 @@ namespace NotePad
         public PersonalizarCor()
         {
             InitializeComponent();
-
         }
 
         private void maskedTextBoxR_TextChanged(object sender, EventArgs e)
@@ -26,15 +25,11 @@ namespace NotePad
 
         private void PersonalizarCor_Load(object sender, EventArgs e)
         {
+            panelRGB.BackColor = Color.FromArgb(PersonalizaCor.Instance.GetColor[0], PersonalizaCor.Instance.GetColor[1], PersonalizaCor.Instance.GetColor[2]);
+            maskedTextBoxR.Text = Convert.ToString(PersonalizaCor.Instance.GetColor[0]);
+            maskedTextBoxG.Text = Convert.ToString(PersonalizaCor.Instance.GetColor[1]);
+            maskedTextBoxB.Text = Convert.ToString(PersonalizaCor.Instance.GetColor[2]);
         }
-
-        private int[] SalvaCores()
-        {
-            int[] cores = { int.Parse(maskedTextBoxR.Text), int.Parse(maskedTextBoxG.Text), int.Parse(maskedTextBoxB.Text)};
-            return cores;
-        }
-
-
 
         private void maskedTextBoxG_TextChanged(object sender, EventArgs e)
         {
@@ -44,8 +39,6 @@ namespace NotePad
         private void maskedTextBoxB_TextChanged(object sender, EventArgs e)
         {
             ExcecaoVazio(maskedTextBoxB);
-            //MessageBox.Show(Convert.ToString(Color.FromArgb(int.Parse(maskedTextBoxB.Text))));
-            //panelRGB.BackColor = Color.FromArgb(int.Parse(maskedTextBoxR.Text), int.Parse(maskedTextBoxG.Text), int.Parse(maskedTextBoxB.Text));
         }
 
         private void ExcecaoVazio(MaskedTextBox maskedTextBox)
@@ -101,7 +94,6 @@ namespace NotePad
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-            panelRGB.BackColor = Color.FromArgb(SalvaCores()[0], SalvaCores()[1], SalvaCores()[2]);
             this.Close();
         }
     }
