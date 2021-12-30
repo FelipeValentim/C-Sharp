@@ -52,6 +52,7 @@ namespace NotePad
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSplitButtonCor = new System.Windows.Forms.ToolStripSplitButton();
             this.personalizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonRemoveColor = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonResetar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
@@ -63,7 +64,6 @@ namespace NotePad
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripStatusLabelWords = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.toolStripButtonRemoveColor = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -313,6 +313,16 @@ namespace NotePad
             this.personalizarToolStripMenuItem.Text = "Personalizar";
             this.personalizarToolStripMenuItem.Click += new System.EventHandler(this.personalizarToolStripMenuItem_Click);
             // 
+            // toolStripButtonRemoveColor
+            // 
+            this.toolStripButtonRemoveColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRemoveColor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemoveColor.Image")));
+            this.toolStripButtonRemoveColor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRemoveColor.Name = "toolStripButtonRemoveColor";
+            this.toolStripButtonRemoveColor.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButtonRemoveColor.Text = "Remover cor";
+            this.toolStripButtonRemoveColor.Click += new System.EventHandler(this.toolStripButtonRemoveColor_Click);
+            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
@@ -397,16 +407,6 @@ namespace NotePad
             this.richTextBox.Text = "";
             this.richTextBox.Click += new System.EventHandler(this.richTextBox_Click);
             this.richTextBox.TextChanged += new System.EventHandler(this.richTextBox_TextChanged);
-            // 
-            // toolStripButtonRemoveColor
-            // 
-            this.toolStripButtonRemoveColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRemoveColor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemoveColor.Image")));
-            this.toolStripButtonRemoveColor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRemoveColor.Name = "toolStripButtonRemoveColor";
-            this.toolStripButtonRemoveColor.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButtonRemoveColor.Text = "Remover cor";
-            this.toolStripButtonRemoveColor.Click += new System.EventHandler(this.toolStripButtonRemoveColor_Click);
             // 
             // FormPrincipal
             // 
