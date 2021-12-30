@@ -257,10 +257,6 @@ namespace NotePad
             {
                 cores.Show();
             }
-            else
-            {
-                cores.Activate();
-            }
         }
 
         private void toolStripButtonRemoveColor_Click(object sender, EventArgs e)
