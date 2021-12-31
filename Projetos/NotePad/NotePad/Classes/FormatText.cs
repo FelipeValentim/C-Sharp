@@ -63,7 +63,7 @@ namespace NotePad.Classes
             currentFont = richTextBox.SelectionFont;
             fs = currentFont.Style;
             //remove style
-            fs = fs & ~style;
+            fs = fs & ~style; // Pega todos os estilos aplicados no texto selecionado e faz uma operação unária & com o "não estilo" que quero remover
             richTextBox.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, fs);
 
         }

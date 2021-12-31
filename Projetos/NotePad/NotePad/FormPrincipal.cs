@@ -130,8 +130,6 @@ namespace NotePad
                 {
                     richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
                 }
-                    //File.WriteAllText(saveFileDialog.FileName, richTextBox.Text);
-                //richTextBox.SaveFile(saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
             }
         }
 
@@ -188,18 +186,17 @@ namespace NotePad
 
         private void richTextBox_Click(object sender, EventArgs e)
         {
-            //GetValuesText();
             GetRowsColumns();
         }
 
-        private void richTextBox_TextChanged(object sender, EventArgs e)
+        private void richTextBox_TextChanged(object sender, EventArgs e) // Quando o texto é alterado pega quantidade de linhas, colunas e palavras
         {
-            richTextBox.Font = new Font("Arial", 11);
+            //richTextBox.Font = new Font("Arial", 11);
             GetRowsColumns();
             GetWords();
         }
 
-        private void GetValuesText()
+        private void GetValuesText() // Pega os valores referente a fonte
         {
             toolStripComboBoxFonteTamanho.Text = Convert.ToString(richTextBox.SelectionFont.Size);
             toolStripComboBoxFonteTipo.Text = richTextBox.SelectionFont.Name;
@@ -210,14 +207,13 @@ namespace NotePad
             // Contar colunas e linhas
             int index = richTextBox.SelectionStart;
             int li = richTextBox.GetLineFromCharIndex(index);
-            int firstChar = richTextBox.GetFirstCharIndexFromLine(li);
-            int col;
-            col = index - firstChar;
+            int primeiroChar = richTextBox.GetFirstCharIndexFromLine(li);
+            int col = index - primeiroChar;
 
             toolStripStatusLabelLinhasColunas.Text = li + " linhas | " + col + " colunas   ";
         }
 
-        private void GetWords()
+        private void GetWords() // Pega quantidade de palavras
         {
             int wordCount = 0, index = 0;
             while (index < richTextBox.Text.Length && char.IsWhiteSpace(richTextBox.Text[index]))
@@ -253,15 +249,47 @@ namespace NotePad
         private void personalizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PersonalizarCor cores = new PersonalizarCor();
-            if (Application.OpenForms["PersonalizarCor"] as PersonalizarCor == null)
+            if (Application.OpenForms["PersonalizarCor"] as PersonalizarCor == null) // Só vai abrir a janela se não tiver uma aberta
             {
                 cores.Show();
             }
         }
 
-        private void toolStripButtonRemoveColor_Click(object sender, EventArgs e)
+        private void toolStripButtonRemoveColor_Click(object sender, EventArgs e) // Remove a cor atual
         {
             richTextBox.SelectionColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void toolStripComboBoxFonteTamanho_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TrocaFonte();
+            }
+        }
+
+        private void toolStripComboBoxFonteTamanho_Leave(object sender, EventArgs e)
+        {
+            TrocaFonte();
+        }
+
+        private void TrocaFonte()
+        {
+            try
+            {
+                if (double.Parse(toolStripComboBoxFonteTamanho.Text) < 1)
+                {
+                    toolStripComboBoxFonteTamanho.Text = "1";
+                }
+                else
+                {
+                    FormatText.FormataTexto(toolStripComboBoxFonteTipo.Text, float.Parse(toolStripComboBoxFonteTamanho.Text), FontStyle.Regular, "fontSize", richTextBox);
+                }
+            }
+            catch (FormatException)
+            {
+                toolStripComboBoxFonteTamanho.Text = "1";
+            }
         }
     }
 }

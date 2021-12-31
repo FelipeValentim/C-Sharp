@@ -41,7 +41,7 @@ namespace NotePad
             ExcecaoVazio(maskedTextBoxB);
         }
 
-        private void ExcecaoVazio(MaskedTextBox maskedTextBox)
+        private void ExcecaoVazio(MaskedTextBox maskedTextBox) // No caso do usuário apagar o zero e gerar a exceção
         {
             try
             {

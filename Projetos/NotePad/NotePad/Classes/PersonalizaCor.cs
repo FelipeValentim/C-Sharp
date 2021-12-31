@@ -9,9 +9,9 @@ namespace NotePad.Classes
     public class PersonalizaCor
     {
         private PersonalizaCor() { }
-        private PersonalizaCor(int QuantidadeElementos)
+        private PersonalizaCor(int quantidadeElementos)
         {
-            GetColor = new int[QuantidadeElementos];
+            GetColor = new int[quantidadeElementos];
         }
 
         public int[] GetColor

@@ -208,6 +208,8 @@ namespace NotePad
             this.toolStripComboBoxFonteTamanho.Text = "11";
             this.toolStripComboBoxFonteTamanho.ToolTipText = "Tamanho da fonte";
             this.toolStripComboBoxFonteTamanho.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFonteTamanho_SelectedIndexChanged);
+            this.toolStripComboBoxFonteTamanho.Leave += new System.EventHandler(this.toolStripComboBoxFonteTamanho_Leave);
+            this.toolStripComboBoxFonteTamanho.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripComboBoxFonteTamanho_KeyDown);
             // 
             // toolStripSeparator4
             // 
