@@ -36,10 +36,11 @@ namespace NotePad
                 else if (dialogResult == DialogResult.Yes)
                 {
                     SalvarArquivo();
-                } else if (dialogResult == DialogResult.Cancel)
+                }
+                else if (dialogResult == DialogResult.Cancel)
                 {
                     return true;
-                }    
+                }
             }
             return false;
         }
@@ -49,7 +50,7 @@ namespace NotePad
             if (MensagemSalvar() == true)
             {
                 return;
-            }         
+            }
             var filePath = string.Empty;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -139,12 +140,12 @@ namespace NotePad
             {
                 e.Cancel = true;
             }
-            
+
         }
 
         private void toolStripButtonNegrito_Click(object sender, EventArgs e)
         {
-            FormataTexto(" ", 0, FontStyle.Bold, "fontStyle");    
+            FormataTexto(" ", 0, FontStyle.Bold, "fontStyle");
         }
 
         private void toolStripButtonUnderline_Click(object sender, EventArgs e)
@@ -184,10 +185,7 @@ namespace NotePad
             FormataTexto(string.Empty, fontSize, FontStyle.Regular, "fontSize");
         }
 
-        private void richTextBox_Click(object sender, EventArgs e)
-        {
-            GetRowsColumns();
-        }
+     
 
         private void richTextBox_TextChanged(object sender, EventArgs e) // Quando o texto é alterado pega quantidade de linhas, colunas e palavras
         {
@@ -248,10 +246,10 @@ namespace NotePad
 
         private void personalizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PersonalizarCor cores = new PersonalizarCor();
+            PersonalizarCor personalizaCores = new PersonalizarCor();
             if (Application.OpenForms["PersonalizarCor"] as PersonalizarCor == null) // Só vai abrir a janela se não tiver uma aberta
             {
-                cores.Show();
+                personalizaCores.ShowDialog();
             }
         }
 
@@ -260,35 +258,13 @@ namespace NotePad
             richTextBox.SelectionColor = Color.FromArgb(0, 0, 0);
         }
 
-        private void toolStripComboBoxFonteTamanho_KeyDown(object sender, KeyEventArgs e)
+        private void richTextBox_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            GetRowsColumns();
+            if (richTextBox.SelectedText.Length < 1)
             {
-                TrocaFonte();
-            }
-        }
-
-        private void toolStripComboBoxFonteTamanho_Leave(object sender, EventArgs e)
-        {
-            TrocaFonte();
-        }
-
-        private void TrocaFonte()
-        {
-            try
-            {
-                if (double.Parse(toolStripComboBoxFonteTamanho.Text) < 1)
-                {
-                    toolStripComboBoxFonteTamanho.Text = "1";
-                }
-                else
-                {
-                    FormatText.FormataTexto(toolStripComboBoxFonteTipo.Text, float.Parse(toolStripComboBoxFonteTamanho.Text), FontStyle.Regular, "fontSize", richTextBox);
-                }
-            }
-            catch (FormatException)
-            {
-                toolStripComboBoxFonteTamanho.Text = "1";
+                toolStripComboBoxFonteTipo.Text = richTextBox.SelectionFont.Name;
+                toolStripComboBoxFonteTamanho.Text = Convert.ToString(richTextBox.SelectionFont.Size);
             }
         }
     }

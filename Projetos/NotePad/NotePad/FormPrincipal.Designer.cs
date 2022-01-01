@@ -208,8 +208,6 @@ namespace NotePad
             this.toolStripComboBoxFonteTamanho.Text = "11";
             this.toolStripComboBoxFonteTamanho.ToolTipText = "Tamanho da fonte";
             this.toolStripComboBoxFonteTamanho.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxFonteTamanho_SelectedIndexChanged);
-            this.toolStripComboBoxFonteTamanho.Leave += new System.EventHandler(this.toolStripComboBoxFonteTamanho_Leave);
-            this.toolStripComboBoxFonteTamanho.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripComboBoxFonteTamanho_KeyDown);
             // 
             // toolStripSeparator4
             // 
@@ -311,7 +309,7 @@ namespace NotePad
             // personalizarToolStripMenuItem
             // 
             this.personalizarToolStripMenuItem.Name = "personalizarToolStripMenuItem";
-            this.personalizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personalizarToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.personalizarToolStripMenuItem.Text = "Personalizar";
             this.personalizarToolStripMenuItem.Click += new System.EventHandler(this.personalizarToolStripMenuItem_Click);
             // 
@@ -396,8 +394,10 @@ namespace NotePad
             // richTextBox
             // 
             this.richTextBox.AcceptsTab = true;
+            this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox.EnableAutoDragDrop = true;
             this.richTextBox.Font = new System.Drawing.Font("Arial", 11F);
             this.richTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
